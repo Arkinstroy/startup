@@ -1,6 +1,4 @@
-# startup
-
-Makoshika
+# Makoshika
 
 Design:
 
@@ -9,6 +7,7 @@ that will allow you to review huge amounts of data scraped from the web, all con
 that are generated with the help of AI. Just enter in which companies you are interested in trading, and Makoshika will pull in any relevant
 data about that company, be it financial statements, news articles, or anything else that would indicate whether a buy would be a good decision
 or not. The knowledge graphs that are computed will find connections between even the most obscure points of data.
+
 
 
 <img width="414" alt="MakoshikaSpec" src="https://user-images.githubusercontent.com/93345601/215248729-04b18088-8da0-4ceb-9901-62be64d0c5ea.png">
