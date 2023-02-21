@@ -22,3 +22,9 @@ Ability to recommend choices based on data found
 Editable scripts and ability to make custom plugins
 Enterprise edition available for large teams or companies.
 All data acquired will be securely and persistently stored on the cloud for later access.
+
+
+
+Simon HTML
+
+I learned how to put basic HTML structures together to create a website that can go between pages. I also learned how to make basic graphics using html and the svg type. Although none of this is styled or functional, I still know how to throw together a basic and correct layout of different html elements.
