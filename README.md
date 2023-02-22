@@ -28,3 +28,8 @@ All data acquired will be securely and persistently stored on the cloud for late
 Simon HTML
 
 I learned how to put basic HTML structures together to create a website that can go between pages. I also learned how to make basic graphics using html and the svg type. Although none of this is styled or functional, I still know how to throw together a basic and correct layout of different html elements.
+
+
+Simon CSS
+
+I learned how to integrate bootstrap and regular CSS into an actual webpage. This one was more complicated, and already had the basic html layout, but I saw how to combine this into an actual application and make it look more professional. I also found the method to add responsivity to the application based on size to be very interesting.
