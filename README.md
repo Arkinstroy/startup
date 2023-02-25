@@ -33,3 +33,8 @@ I learned how to put basic HTML structures together to create a website that can
 Simon CSS
 
 I learned how to integrate bootstrap and regular CSS into an actual webpage. This one was more complicated, and already had the basic html layout, but I saw how to combine this into an actual application and make it look more professional. I also found the method to add responsivity to the application based on size to be very interesting.
+
+
+Startup HTML and CSS
+
+I learned how to combine the concepts of this class into an actual project. I found it very helpful to have the specification made beforehand. The most interesting thing that I found was editing the DOM through javascript, which is not technically supposed to be a part of this project, but oh well. If pure javascript and HTML can offer this much reactivity, I am excited to see what an actual framework can do.
