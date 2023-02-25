@@ -93,7 +93,12 @@
         fetch(`https://api.stockdata.org/v1/data/eod?symbols=${symbol}&api_token=${KEY}&date_from=2023`)
             .then((response) => response.json())
             .then((data) => {
-                if (data.data.length === 0) {
+                if (data && data.data && data.data.length === 0) {
+                    document.getElementById('companyTicker').innerHTML = 'Cannot find ticker symbol';
+                    document.getElementById('companyName').innerHTML = '';
+                    return;
+                }
+                if (!data || !data.data) {
                     document.getElementById('companyTicker').innerHTML = 'Cannot find ticker symbol';
                     document.getElementById('companyName').innerHTML = '';
                     return;
@@ -105,25 +110,30 @@
                 document.getElementById('companyTicker').innerHTML = data.meta.ticker;
                 document.getElementById('companyName').innerHTML = `(${data.meta.name})`;
 
+                let delay = 0;
+
                 data.data.forEach(info => {
-                    let values = [];
-                    for (let i = 0; i < 6; i++) {
-                        const newInfo = document.createElement('p');
-                        values.push(newInfo);
-                        gridElements.push(newInfo);
-                        stockGrid.appendChild(values[i]);
-                    }
-                    values[0].classList.add('first-title')
-                    values[0].innerHTML = info.date.substring(0, 10);
-                    values[1].innerHTML = info.open;
-                    values[2].innerHTML = info.high;
-                    values[3].innerHTML = info.low;
-                    values[4].innerHTML = info.close;
-                    values[5].innerHTML = info.volume;
+                    setTimeout(() => {
+                        let values = [];
+                        for (let i = 0; i < 6; i++) {
+                            const newInfo = document.createElement('p');
+                            values.push(newInfo);
+                            gridElements.push(newInfo);
+                            stockGrid.appendChild(values[i]);
+                        }
+                        values[0].classList.add('first-title')
+                        values[0].innerHTML = info.date.substring(0, 10);
+                        values[1].innerHTML = info.open;
+                        values[2].innerHTML = info.high;
+                        values[3].innerHTML = info.low;
+                        values[4].innerHTML = info.close;
+                        values[5].innerHTML = info.volume;
+                    }, delay);
+                    delay += 40;
                 })
             })
             .catch(error => {
-                console.log('error');
+                console.log(error);
             });
     }
 
