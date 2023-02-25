@@ -39,8 +39,18 @@
                 <button class="stock-search" onclick="fetchStock()">Search</button>
             </div>
 
-            <div class="stock-grid">
+            <div class="flex stock-info">
+                <p id="companyTicker"></p>
+                <p id="companyName"></p>
+            </div>
 
+            <div class="stock-grid" id="stockGrid">
+                <p class="stock-title first-title">Date</p>
+                <p class="stock-title">Open</p>
+                <p class="stock-title">High</p>
+                <p class="stock-title">Low</p>
+                <p class="stock-title">Close</p>
+                <p class="stock-title">Volume</p>
             </div>
         </main>
         
@@ -72,14 +82,45 @@
 
     let symbol = 'AAPL';
 
+    let gridElements = [];
+
     async function fetchStock() {
         let input = document.getElementById('stockSearch');
+        let stockGrid = document.getElementById('stockGrid');
         let symbol = input.value;
+        
 
-        fetch(` https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=${KEY}`)
+        fetch(`https://api.stockdata.org/v1/data/eod?symbols=${symbol}&api_token=${KEY}&date_from=2023`)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
+                if (data.data.length === 0) {
+                    document.getElementById('companyTicker').innerHTML = 'Cannot find ticker symbol';
+                    document.getElementById('companyName').innerHTML = '';
+                    return;
+                }
+                gridElements.forEach(element => {
+                    element.remove();
+                })
+
+                document.getElementById('companyTicker').innerHTML = data.meta.ticker;
+                document.getElementById('companyName').innerHTML = `(${data.meta.name})`;
+
+                data.data.forEach(info => {
+                    let values = [];
+                    for (let i = 0; i < 6; i++) {
+                        const newInfo = document.createElement('p');
+                        values.push(newInfo);
+                        gridElements.push(newInfo);
+                        stockGrid.appendChild(values[i]);
+                    }
+                    values[0].classList.add('first-title')
+                    values[0].innerHTML = info.date.substring(0, 10);
+                    values[1].innerHTML = info.open;
+                    values[2].innerHTML = info.high;
+                    values[3].innerHTML = info.low;
+                    values[4].innerHTML = info.close;
+                    values[5].innerHTML = info.volume;
+                })
             })
             .catch(error => {
                 console.log('error');

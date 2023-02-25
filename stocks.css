@@ -25,6 +25,39 @@
     background-color: #d3d3d3;
 }
 
+
+.stock-info {
+    margin-left: 0.8rem;
+}
+
+.stock-info > p {
+    margin: 0.8rem;
+}
+
 .stock-grid {
+    margin-left: 1.6rem;
     display: grid;
+    overflow-y: auto;
+    padding-bottom: 1.6rem;
+    
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.stock-grid > p {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding-left: 1.6rem;
+    margin: 0rem;
+
+    
+}
+
+.stock-title {
+    border-top: 1px solid black;
+    padding-left: 0.8rem !important;
+    font-size: 1.2rem;
+}
+
+.first-title {
+    border-left: 1px solid black;
 }
