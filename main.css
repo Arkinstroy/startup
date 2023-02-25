@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #D3D3D3;;
+    background-color: #D3D3D3;
 }
 
 header {
@@ -26,7 +26,7 @@ header {
     margin-left: 2rem;
 }
 
-.tabs p {
+a {
     padding-left: 1.6rem;
     padding-right: 1.6rem;
     padding-top: 0.4rem;
@@ -35,7 +35,11 @@ header {
     cursor: pointer
 }
 
-.tabs p:hover {
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; }
+
+a:hover {
     color: black;
     background-color: #d3d3d3;
 }
@@ -82,7 +86,7 @@ button {
 main {
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
-    background-color: white;
+    background-color: #4b4b4b;
 }
 
 .main-content {

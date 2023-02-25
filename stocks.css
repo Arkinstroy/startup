@@ -1,0 +1,30 @@
+
+
+
+.stock-content {
+    padding: 1.6rem;
+}
+
+.stock-label {
+    margin-right: 0.8rem;
+}
+
+.stock-input {
+    color: black;
+}
+
+.stock-search {
+    background-color: #3b3b3b;
+    border: none;
+    margin: 0rem;
+    margin-left: 0.8rem;
+}
+
+.stock-search:hover {
+    color: black;
+    background-color: #d3d3d3;
+}
+
+.stock-grid {
+    display: grid;
+}

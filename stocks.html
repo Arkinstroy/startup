@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="stocks.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Glegoo">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Geo">
         <title>Makoshika</title>
@@ -30,17 +31,16 @@
     <body>
         
         <main>
-            <div class="flex main-content">
-                <img class="image" src="financialTrading.jpeg"></img>
-                <div class="floating-div floating-top">
-                    <p>Analyze stock prices</p>
-                </div>
-                <div class="floating-div floating-middle">
-                    <p>Collect data on companies</p>
-                </div>
-                <div class="floating-div">
-                    <p>Aggregate data sources to make decisions</p>
-                </div>
+            <div class="flex stock-content">
+                <label for="stockSearch" class="stock-label">Enter ticker symbol</label>
+
+                <input class="stock-input" type="text" id="stockSearch" name="stockSearch" required size="10">
+
+                <button class="stock-search" onclick="fetchStock()">Search</button>
+            </div>
+
+            <div class="stock-grid">
+
             </div>
         </main>
         
@@ -65,3 +65,25 @@
 
     </footer>
 </html>
+
+
+<script>
+    const KEY = 'gVH10UbR6Q3kn0NggzIzTgdRTrqnj813rn8esH3P';
+
+    let symbol = 'AAPL';
+
+    async function fetchStock() {
+        let input = document.getElementById('stockSearch');
+        let symbol = input.value;
+
+        fetch(` https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=${KEY}`)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.log('error');
+            });
+    }
+
+</script>
