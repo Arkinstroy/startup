@@ -38,3 +38,7 @@ I learned how to integrate bootstrap and regular CSS into an actual webpage. Thi
 Startup HTML and CSS
 
 I learned how to combine the concepts of this class into an actual project. I found it very helpful to have the specification made beforehand. The most interesting thing that I found was editing the DOM through javascript, which is not technically supposed to be a part of this project, but oh well. If pure javascript and HTML can offer this much reactivity, I am excited to see what an actual framework can do.
+
+Startup Javascript
+
+I learned how to interact with the DOM effectively using javascript and how to update information that needs to be displayed. I also learned the basics of interactivity using Javascript and making it so that the website is responsive and can wait for certain amounts of time so that everything is not put in at once.
