@@ -103,44 +103,74 @@ async function fetchStock(time = 0) {
     }
 }
 
+async function changeTime(time) {
+    if (!symbol) {
+        return;
+    }
+    await fetchStock(time);
+}
+
 function drawGrid(points, ...adtlPoints) {
     ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, 800, 600);
+    ctx.fillRect(0, 0, 900, 500);
+    ctx.strokeStyle = 'black';
+    ctx.beginPath();
+    ctx.moveTo(100, 0);
+    ctx.lineTo(100, 500);
+    ctx.moveTo(0, 400);
+    ctx.lineTo(900, 400);
+    ctx.stroke();
 
+    let min = points[0];
     let max = 0;
     points.forEach(point => {
         if (point > max) {
             max = point;
         }
+        if (point < min) {
+            min = point;
+        }
     });
-    if (adtlPoints) {
+    if (adtlPoints.length) {
         adtlPoints.forEach(dataSet => {
             dataSet.forEach(point => {
                 if (point > max) {
                     max = point;
                 }
+                if (point < min) {
+                    min = point;
+                }
             })
         })
     }
-    const modifier = 550 / max;
+    const modifier = 350 / (max - min);
 
-    drawPath(points, modifier);
+    ctx.font = '18px Arial';
+    ctx.fillStyle = 'black';
+    ctx.beginPath();
+    ctx.fillText(points[0], 25, 370 - ((points[0] - min) * modifier));
+    ctx.moveTo(60, 380 - ((points[0] - min) * modifier));
+    ctx.lineTo(100, 380 - ((points[0] - min) * modifier));
+    ctx.stroke();
+
+    drawPath(points, modifier, min);
 
     if (adtlPoints) {
         adtlPoints.forEach((dataSet, index) => {
             drawPath(dataSet, modifier, colors[index % colors.length]);
         })
     }
+    
 }
 
-function drawPath(points, modifier, color = 'black') {
+function drawPath(points, modifier, min, color = 'blue') {
     const interval = 800 / points.length;
     
     ctx.strokeStyle = color;
     ctx.beginPath();
-    ctx.moveTo(0, 600 - points[0] * modifier);
+    ctx.moveTo(100, 380 - (points[0] - min) * modifier);
     for (let i = 1; i < points.length; i++) {
-        ctx.lineTo(i * interval, 600 - (points[i] * modifier));
+        ctx.lineTo(i * interval + 100, 380 - ((points[i] - min) * modifier));
     }
     ctx.stroke();
 }
