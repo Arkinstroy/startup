@@ -42,3 +42,4 @@ I learned how to combine the concepts of this class into an actual project. I fo
 Startup Javascript
 
 I learned how to interact with the DOM effectively using javascript and how to update information that needs to be displayed. I also learned the basics of interactivity using Javascript and making it so that the website is responsive and can wait for certain amounts of time so that everything is not put in at once.
+I also learned how to interact with an HTML canvas with Javascript and change it in real time.
