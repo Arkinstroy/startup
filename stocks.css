@@ -37,7 +37,6 @@
 .stock-grid {
     margin-left: 1.6rem;
     display: grid;
-    overflow-y: auto;
     padding-bottom: 1.6rem;
     
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -62,6 +61,18 @@
 
 .first-title {
     border-left: 1px solid black;
+}
+
+.info-container {
+    overflow-y: auto;
+}
+
+.info-container img {
+    width: 600px;
+}
+
+.canvas-class {
+    margin-left: 1.6rem;
 }
 
 @keyframes stock-fade {
