@@ -75,6 +75,23 @@
     margin-left: 1.6rem;
 }
 
+.stock-date-tabs {
+    margin-left: 1.6rem;
+}
+
+.stock-date-tabs p {
+    text-align: center;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.stock-date-tabs p:hover {
+    color: black;
+    background-color: #d3d3d3;
+}
+
 @keyframes stock-fade {
     from {
         opacity: 0;

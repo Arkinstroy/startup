@@ -6,25 +6,70 @@ let gridElements = [];
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-async function fetchStock() {
+const colors = [
+    'purple',
+    'teal',
+    'green',
+    'yellow',
+    'orange',
+    'red',
+    'pink',
+]
+
+let symbol = null;
+
+async function fetchStock(time = 0) {
     const input = document.getElementById('stockSearch');
     const stockGrid = document.getElementById('stockGrid');
-    const symbol = input.value;
+    symbol = input.value;
 
     let companyName = null;
 
-    const colors = [
-        'blue',
-        'teal',
-        'green',
-        'yellow',
-        'orange',
-        'red',
-        'purple',
-    ]
     
 
-    await fetch(`https://api.stockdata.org/v1/data/eod?symbols=${symbol}&api_token=${stocksKey}&date_from=2022`)
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mmNum = today.getMonth() + 1;
+    const ddNum = today.getDate();
+
+    let mm = mmNum;
+    let dd = ddNum;
+
+    if (mmNum < 10) mm = '0' + mmNum;
+    if (ddNum < 10) dd = '0' + ddNum;
+
+    let fullDate = (yyyy - 1) + '-' + mm + '-' + dd;
+
+    switch (time) {
+        case 1:
+            if (mm > 6) {
+                let newMM = (mmNum - 6)
+                if (newMM < 10) mm = '0' + newMM;
+                fullDate = yyyy + '-' + mm + '-' + dd;
+            } else {
+                let newMM = (mmNum + 6)
+                if (newMM < 10) mm = '0' + newMM;
+                fullDate = (yyyy - 1) + '-' + mm + '-' + dd;
+            }
+            break;
+        case 2:
+            fullDate = yyyy;
+            break;
+        case 3:
+            fullDate = (yyyy - 2) + '-' + mm + '-' + dd;
+            break;
+        case 4:
+            fullDate = (yyyy - 5) + '-' + mm + '-' + dd;
+            break;
+        default:
+            fullDate = (yyyy - 1) + '-' + mm + '-' + dd;
+            break;
+    }
+
+     
+    
+
+    await fetch(`https://api.stockdata.org/v1/data/eod?symbols=${symbol}&api_token=${stocksKey}&date_from=${fullDate}&sort=asc`)
         .then((response) => response.json())
         .then((data) => {
             if (data && data.data && data.data.length === 0) {
