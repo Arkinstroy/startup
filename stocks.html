@@ -38,22 +38,21 @@
 
                 <button class="stock-search" onclick="fetchStock()">Search</button>
             </div>
-
-            <div class="flex stock-info">
-                <p id="companyTicker"></p>
-                <p id="companyName"></p>
-            </div>
-
-            <div class="stock-grid" id="stockGrid">
-                <p class="stock-title first-title">Date</p>
-                <p class="stock-title">Open</p>
-                <p class="stock-title">High</p>
-                <p class="stock-title">Low</p>
-                <p class="stock-title">Close</p>
-                <p class="stock-title">Volume</p>
+            <div class="info-container">
+                <div>
+                    <div class="flex stock-info">
+                        <p id="companyTicker"></p>
+                        <p id="companyName"></p>
+                    </div>
+                    <canvas id="canvas" class="canvas-class" width="800" height="600"></canvas>
+    
+                    
+                </div>
+    
+                <div id="newsData"></div>
             </div>
         </main>
-        
+        <script src="stocks.js"></script>
     </body>
 
     <footer>
@@ -75,66 +74,3 @@
 
     </footer>
 </html>
-
-
-<script>
-    const KEY = 'gVH10UbR6Q3kn0NggzIzTgdRTrqnj813rn8esH3P';
-
-    let symbol = 'AAPL';
-
-    let gridElements = [];
-
-    async function fetchStock() {
-        let input = document.getElementById('stockSearch');
-        let stockGrid = document.getElementById('stockGrid');
-        let symbol = input.value;
-        
-
-        fetch(`https://api.stockdata.org/v1/data/eod?symbols=${symbol}&api_token=${KEY}&date_from=2023`)
-            .then((response) => response.json())
-            .then((data) => {
-                if (data && data.data && data.data.length === 0) {
-                    document.getElementById('companyTicker').innerHTML = 'Cannot find ticker symbol';
-                    document.getElementById('companyName').innerHTML = '';
-                    return;
-                }
-                if (!data || !data.data) {
-                    document.getElementById('companyTicker').innerHTML = 'Cannot find ticker symbol';
-                    document.getElementById('companyName').innerHTML = '';
-                    return;
-                }
-                gridElements.forEach(element => {
-                    element.remove();
-                })
-
-                document.getElementById('companyTicker').innerHTML = data.meta.ticker;
-                document.getElementById('companyName').innerHTML = `(${data.meta.name})`;
-
-                let delay = 0;
-
-                data.data.forEach(info => {
-                    setTimeout(() => {
-                        let values = [];
-                        for (let i = 0; i < 6; i++) {
-                            const newInfo = document.createElement('p');
-                            values.push(newInfo);
-                            gridElements.push(newInfo);
-                            stockGrid.appendChild(values[i]);
-                        }
-                        values[0].classList.add('first-title')
-                        values[0].innerHTML = info.date.substring(0, 10);
-                        values[1].innerHTML = info.open;
-                        values[2].innerHTML = info.high;
-                        values[3].innerHTML = info.low;
-                        values[4].innerHTML = info.close;
-                        values[5].innerHTML = info.volume;
-                    }, delay);
-                    delay += 40;
-                })
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
-
-</script>
