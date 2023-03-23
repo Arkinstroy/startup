@@ -43,3 +43,7 @@ Startup Javascript
 
 I learned how to interact with the DOM effectively using javascript and how to update information that needs to be displayed. I also learned the basics of interactivity using Javascript and making it so that the website is responsive and can wait for certain amounts of time so that everything is not put in at once.
 I also learned how to interact with an HTML canvas with Javascript and change it in real time.
+
+Simon service
+
+I learned about how to fetch data from remote sources in a basic web app. I specifically learned how to store and fetch different points of data to and from a web application. This was especially useful because it allows for functionality to store and then fetch scores without them being lost on reload.
