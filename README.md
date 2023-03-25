@@ -47,3 +47,7 @@ I also learned how to interact with an HTML canvas with Javascript and change it
 Simon service
 
 I learned about how to fetch data from remote sources in a basic web app. I specifically learned how to store and fetch different points of data to and from a web application. This was especially useful because it allows for functionality to store and then fetch scores without them being lost on reload.
+
+Simon DB
+
+Although I already knew the basics of databases, it helped to learn about storing sensitive information in environment variables. In my startup, this is probably something I should change by storing API keys in the environment variables instead of in the code itself. That way it is not visible publicly.
