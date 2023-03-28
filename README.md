@@ -51,3 +51,7 @@ I learned about how to fetch data from remote sources in a basic web app. I spec
 Simon DB
 
 Although I already knew the basics of databases, it helped to learn about storing sensitive information in environment variables. In my startup, this is probably something I should change by storing API keys in the environment variables instead of in the code itself. That way it is not visible publicly.
+
+Simon Login
+
+I learned how to send status codes that indicate how a certain web operation went. It's interesting to see the similarities between the server code made in Java for CS 240 and this code. Both match urls to fetch different services and send responses based on these requests. I like how Javascript and Node makes this process very simple and intuitive. The code is very streamlined and not bulky, unlike Java.
