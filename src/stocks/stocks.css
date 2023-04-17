@@ -1,0 +1,103 @@
+
+
+
+.stock-content {
+    padding: 1.6rem;
+}
+
+.stock-label {
+    margin-right: 0.8rem;
+}
+
+.stock-input {
+    color: black;
+}
+
+.stock-search {
+    background-color: #3b3b3b;
+    border: none;
+    margin: 0rem;
+    margin-left: 0.8rem;
+}
+
+.stock-search:hover {
+    color: black;
+    background-color: #d3d3d3;
+}
+
+
+.stock-info {
+    margin-left: 0.8rem;
+}
+
+.stock-info > p {
+    margin: 0.8rem;
+}
+
+.stock-grid {
+    margin-left: 1.6rem;
+    display: grid;
+    padding-bottom: 1.6rem;
+    
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.stock-grid > p {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding-left: 1.6rem;
+    margin: 0rem;
+
+    animation-name: stock-fade;
+    animation-duration: 1s;
+}
+
+.stock-title {
+    border-top: 1px solid black;
+    padding-left: 0.8rem !important;
+    font-size: 1.2rem;
+    animation: none !important;
+}
+
+.first-title {
+    border-left: 1px solid black;
+}
+
+.info-container {
+    overflow-y: auto;
+}
+
+.info-container img {
+    width: 600px;
+}
+
+.canvas-class {
+    margin-left: 1.6rem;
+}
+
+.stock-date-tabs {
+    margin-left: 1.6rem;
+}
+
+.stock-date-tabs p {
+    text-align: center;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    width: 3.2rem;
+    cursor: pointer;
+}
+
+.stock-date-tabs p:hover {
+    color: black;
+    background-color: #d3d3d3;
+}
+
+@keyframes stock-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

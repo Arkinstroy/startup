@@ -1,0 +1,188 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+* {
+  font-family: "Glegoo", Helvetica, sans-serif;
+  color: white;
+  font-size: 1rem;
+}
+
+body {
+  background-color: #D3D3D3;
+}
+
+header {
+  background-color: #4b4b4b;
+}
+
+.main-title {
+  font-family: "Geo";
+  font-size: 5rem;
+  font-weight: bold;
+  color: black;
+  margin-left: 3.2rem;
+  margin-top: 1.6rem;
+}
+
+.tabs {
+  margin-left: 2rem;
+}
+
+a {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  margin: 0rem;
+  cursor: pointer
+}
+
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; }
+
+a:hover {
+  color: black;
+  background-color: #d3d3d3;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.login-buttons {
+  width: 9rem;
+  height: 3rem;
+  align-self: center;
+  border: none;
+  margin-top: 1.6rem;
+}
+
+.sign-up {
+  background-color: #c45e5e;
+}
+
+.sign-up:hover {
+  color: black;
+  background-color: #d3d3d3;
+}
+
+.log-in {
+  background-color: #3b3b3b;
+  margin-right: 1.6rem;
+}
+
+.log-in:hover {
+  color: black;
+  background-color: #d3d3d3;
+}
+
+button {
+  margin: 0.8rem;
+}
+
+main {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  background-color: #4b4b4b;
+}
+
+.main-content {
+  justify-content: center;
+  position: relative;
+}
+
+.image {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.floating-div {
+  position: absolute;
+  width: 28rem;
+  background-color: #4b4b4b;
+  right: 3.2rem;
+  bottom: 3rem;
+}
+
+.floating-div > p {
+  margin-left: 2rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.floating-top {
+  bottom: 9.8rem;
+}
+
+.floating-middle {
+  bottom: 6.4rem;
+}
+
+footer {
+  background-color: #2d2d2d;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0.8rem;
+}
+
+footer > p {
+  font-size: 0.8rem;
+  margin-left: 1.6rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  margin-right: 12rem;
+  cursor: pointer;
+}
+
+footer > p:hover {
+  background-color: #d3d3d3;
+  color: black;
+}
+
+.grid-title {
+  font-size: 1rem;
+  margin-left: 0rem;
+}
+

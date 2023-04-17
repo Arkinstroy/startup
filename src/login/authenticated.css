@@ -1,0 +1,22 @@
+.playerName {
+  color: rgb(118, 190, 210);
+  font-size: 1.5em;
+  padding: 0.5em;
+}
+
+.login-div {
+  padding: 1.6rem;
+}
+
+.login-form {
+  padding: 0.4rem;
+}
+
+.login-form label {
+  padding-left: 1.2rem;
+  padding-right: 0.4rem;
+}
+
+.login-form input {
+  color: black !important;
+}
