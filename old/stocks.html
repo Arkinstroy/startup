@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="stocks.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Glegoo">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Geo">
+        <title>Makoshika</title>
+    </head>
+
+    <header>
+        <div class="flex">
+            <p class="flex-grow main-title">Makoshika</p>
+            <div class="flex">
+                <div><button class="login-buttons sign-up">Sign Up</button></div>
+                
+                <div><button class="login-buttons log-in">Log In</button></div>
+            </div>
+        </div>
+        <div class="flex tabs">
+            <a href="index.html">Home</a>
+            <a href="stocks.html">Stocks</a>
+            <a href="news.html">News</a>
+        </div>
+    </header>
+    
+    <body>
+        
+        <main>
+            <div class="flex stock-content">
+                <label for="stockSearch" class="stock-label">Enter ticker symbol</label>
+
+                <input class="stock-input" type="text" id="stockSearch" name="stockSearch" required size="10">
+
+                <button class="stock-search" onclick="fetchStock()">Search</button>
+            </div>
+            <div class="info-container">
+                <div>
+                    <div class="flex stock-info">
+                        <p id="companyTicker"></p>
+                        <p id="companyName"></p>
+                    </div>
+                    <div class="flex stock-date-tabs">
+                        <p onclick="changeTime(1)">6M</p>
+                        <p onclick="changeTime(2)">YTD</p>
+                        <p onclick="changeTime(0)">1Y</p>
+                        <p onclick="changeTime(3)">2Y</p>
+                        <p onclick="changeTime(4)">5Y</p>
+                    </div>
+                    <canvas id="canvas" class="canvas-class" width="800" height="600"></canvas>
+    
+                    
+                </div>
+    
+                <div id="newsData"></div>
+            </div>
+        </main>
+        <script src="stocks.js"></script>
+    </body>
+
+    <footer>
+        <p class="grid-title">Why Makoshika?</p>
+        <p class="grid-title">Enterprise Solutions</p>
+        <p class="grid-title">More Resources</p>
+
+        <p>About Us</p>
+        <p>Cloud Scalability</p>
+        <p>Documentation</p>
+
+        <p>Diversity and Inclusion</p>
+        <p>Enterprise Pricing</p>
+        <p>Student Discounts</p>
+
+        <p>Security</p>
+        <p>Enterprise Features</p>
+        <p>Develop Plugins</p>
+
+    </footer>
+</html>
