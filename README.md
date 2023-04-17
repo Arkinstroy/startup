@@ -42,3 +42,20 @@ I learned how to combine the concepts of this class into an actual project. I fo
 Startup Javascript
 
 I learned how to interact with the DOM effectively using javascript and how to update information that needs to be displayed. I also learned the basics of interactivity using Javascript and making it so that the website is responsive and can wait for certain amounts of time so that everything is not put in at once.
+I also learned how to interact with an HTML canvas with Javascript and change it in real time.
+
+Simon service
+
+I learned about how to fetch data from remote sources in a basic web app. I specifically learned how to store and fetch different points of data to and from a web application. This was especially useful because it allows for functionality to store and then fetch scores without them being lost on reload.
+
+Simon DB
+
+Although I already knew the basics of databases, it helped to learn about storing sensitive information in environment variables. In my startup, this is probably something I should change by storing API keys in the environment variables instead of in the code itself. That way it is not visible publicly.
+
+Simon Login
+
+I learned how to send status codes that indicate how a certain web operation went. It's interesting to see the similarities between the server code made in Java for CS 240 and this code. Both match urls to fetch different services and send responses based on these requests. I like how Javascript and Node makes this process very simple and intuitive. The code is very streamlined and not bulky, unlike Java.
+
+Simon WebSocket
+
+I learned how to use websockets to enable real-time, two-way communication between a web browser and a server. It uses a persistent connection to allow data to be exchanged seamlessly and can be implemented using various programming languages and frameworks. I learned that this is ideal for applications like chat and online gaming, and is becoming increasingly important for real-time communication between web applications and servers.
