@@ -25,7 +25,6 @@ function getUserByToken(token) {
 }
 
 async function createUser(email, password) {
-    console.log('in create user');
     // Hash the password before we insert it into the database
     const passwordHash = await bcrypt.hash(password, 10);
 
@@ -36,8 +35,27 @@ async function createUser(email, password) {
     };
     await userCollection.insertOne(user);
 
-    console.log(user);
     return user;
+}
+
+function getSavedArticles(email) {
+  const query = {};
+  const options = {
+    sort: { title: -1 }
+  };
+  const cursor = client.db('Cluster1').collection(email).find(query, options);
+  return cursor.toArray();
+}
+
+async function saveArticle(email, title, url, urlToImage) {
+
+  const article = {
+    title: title,
+    url: url,
+    urlToImage: urlToImage,
+  }
+
+  await client.db('Cluster1').collection(email).insertOne(article);
 }
 
 
@@ -46,4 +64,6 @@ module.exports = {
   getUser,
   getUserByToken,
   createUser,
+  getSavedArticles,
+  saveArticle,
 };

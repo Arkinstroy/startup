@@ -2,15 +2,14 @@ import React, { useEffect, useRef } from "react";
 import '../App.css';
 import './stocks.css';
 
+
+
 export function Stocks() {
     const [companyTicker, setCompanyTicker] = React.useState('');
     const [companyName, setCompanyName] = React.useState('');
     const [inputValue, setInputValue] = React.useState('');
     const [ctx, setCTX] = React.useState(null);
 
-
-    const stocksKey = process.env.STOCKSKEY;
-    const newsKey = process.env.NEWSKEY;
 
     let gridElements = [];
 
@@ -140,7 +139,13 @@ export function Stocks() {
         }
 
 
-        await fetch(`https://api.stockdata.org/v1/data/eod?symbols=${inputValue}&api_token=${stocksKey}&date_from=${fullDate}&sort=asc`)
+        await fetch('/api/stocks', {
+                method: 'post',
+                body: JSON.stringify({ inputVal: inputValue, fullDate: fullDate }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
             .then((response) => response.json())
             .then((data) => {
                 if (data && data.data && data.data.length === 0) {
@@ -182,31 +187,7 @@ export function Stocks() {
     }
 
 
-
-
-    async function fetchNews(company) {
-        const newsData = document.getElementById('newsData');
-
-        fetch(`https://newsapi.org/v2/top-headlines?q=${company}&apiKey=${newsKey}`)
-            .then((response) => response.json())
-            .then((data) => {
-                if (data && data.status === "ok"
-                    && Array.isArray(data.articles) && data.articles.length > 0) {
-                        data.articles.forEach(article => {
-                            const container = document.createElement('div');
-                            newsData.appendChild(container);
-
-                            const titleLink = document.createElement('a');
-                            titleLink.innerHTML = article.title;
-                            titleLink.href = article.url;
-                            container.appendChild(titleLink);
-                            const image = document.createElement('img');
-                            image.src = article.urlToImage;
-                            container.appendChild(image);
-                        })
-                }
-            });
-    }
+    
 
   return (
       <div>

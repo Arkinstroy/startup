@@ -1,0 +1,26 @@
+a {
+    padding: 1rem;
+}
+
+main {
+    overflow-y: auto;
+}
+
+img {
+    width: 64rem;
+    margin-top: 1rem;
+}
+
+.article {
+    margin: 2rem;
+}
+
+.article button {
+    padding: 1rem;
+    width: 4rem !important;
+    cursor: pointer;
+}
+
+.none-found {
+    margin-left: 1.6rem;
+}

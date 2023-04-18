@@ -160,14 +160,14 @@ main {
   bottom: 6.4rem;
 }
 
-footer {
+.footer-grid {
   background-color: #2d2d2d;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 0.8rem;
 }
 
-footer > p {
+.footer-grid > p {
   font-size: 0.8rem;
   margin-left: 1.6rem;
   margin-top: 0.4rem;
@@ -176,13 +176,25 @@ footer > p {
   cursor: pointer;
 }
 
-footer > p:hover {
+.footer-grid > p:hover {
   background-color: #d3d3d3;
   color: black;
 }
 
 .grid-title {
-  font-size: 1rem;
-  margin-left: 0rem;
+  font-size: 1rem !important;
+  margin-left: 0rem !important;
 }
 
+.github-link {
+  padding: 0.8rem;
+  margin: 0.8rem;
+  color: black !important;
+  position: relative;
+  top: 1.4rem;
+}
+
+.github-link:hover {
+  color: white !important;
+  background-color: #2d2d2d;
+}
