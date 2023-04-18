@@ -15,6 +15,7 @@ const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 
 const client = new MongoClient(url);
 const userCollection = client.db('Cluster0').collection('user');
+const savedCluster = client.db('Cluster1');
 
 function getUser(email) {
   return userCollection.findOne({ email: email });
@@ -38,12 +39,12 @@ async function createUser(email, password) {
     return user;
 }
 
-function getSavedArticles(email) {
+async function getSavedArticles(email) {
   const query = {};
   const options = {
     sort: { title: -1 }
   };
-  const cursor = client.db('Cluster1').collection(email).find(query, options);
+  const cursor = await savedCluster.collection(email).find(query, options);
   return cursor.toArray();
 }
 
@@ -55,7 +56,7 @@ async function saveArticle(email, title, url, urlToImage) {
     urlToImage: urlToImage,
   }
 
-  await client.db('Cluster1').collection(email).insertOne(article);
+  await savedCluster.collection(email).insertOne(article);
 }
 
 
