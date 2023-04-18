@@ -17,7 +17,6 @@ export function News() {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             if (data && data.status === "ok"
                 && Array.isArray(data.articles)) {
                     if (data.articles.length > 0) {
@@ -68,7 +67,7 @@ export function News() {
                             className="login-buttons sign-up"
                             onClick={() => saveArticle(article.title, article.url, article.urlToImage)}
                         >save</button>
-                        <img src={article.urlToImage}></img>
+                        <img src={article.urlToImage} alt={''}></img>
                     </div>
                 )
             }) : <p className="none-found">No articles found</p>}

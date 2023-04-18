@@ -32,7 +32,7 @@ export function Saved() {
                 return (
                     <div className="article" key={article.title}>
                         <a href={article.url}>{article.title}</a>
-                        <img src={article.urlToImage}></img>
+                        <img src={article.urlToImage} alt={''}></img>
                     </div>
                 )
             }) : <p className="none-found">No articles found</p>}
