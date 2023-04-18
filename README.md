@@ -59,3 +59,11 @@ I learned how to send status codes that indicate how a certain web operation wen
 Simon WebSocket
 
 I learned how to use websockets to enable real-time, two-way communication between a web browser and a server. It uses a persistent connection to allow data to be exchanged seamlessly and can be implemented using various programming languages and frameworks. I learned that this is ideal for applications like chat and online gaming, and is becoming increasingly important for real-time communication between web applications and servers.
+
+Startup Service
+
+This was a pain to make. I chased a stupid issue around for a long time involving the MongoDB topology being closed. I fixed it by making a constant variable at the top set to the second cluster, instead of defining it on the fly, which I think was causing the issue (changing it fixed it). Either way, it works now and I'm afraid to touch it. Another thing that was incredibly annoying to figure out was getting the information of the currently logged in user, but this turned out to be ridiculously easy; you could just get the cookie from the response and be like req.cookies.token or something like that.
+
+Startup React
+
+In some ways I kind of nuked my old project and just copied it over to a newly made React app. Either way, it hugely simplified all the code I had in place to manipulate the DOM. I have experience with Vue, so it was a bit weird going over to React and getting used to the different syntax used to accomplish the same concepts. In some ways I like it better though, and it is very streamlined. 
